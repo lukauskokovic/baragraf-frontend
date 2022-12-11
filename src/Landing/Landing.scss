@@ -1,0 +1,57 @@
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .padding-global {
+    padding: 2rem 8rem;
+  }
+
+  .site-mission {
+    min-height: calc(100vh - 4.5rem);
+    gap: 4rem;
+  }
+  
+  .mission-img {
+    flex: 3;
+  }
+  
+  
+  .section-text {
+    flex: 4;
+  }
+  
+  .section-text h2 {
+    margin-bottom: 2rem;
+    color: var(--blue-dark);
+    font-size: 3rem;
+    font-weight: 600;
+  }
+  .mission-img img {
+    width: 100%;
+    max-width: 25rem;
+  }
+
+  @media (max-width: 750px) {
+    .site-mission {
+      flex-direction: column;
+      justify-content: center;
+      gap: 1rem;
+    }
+    .section-text * {
+      text-align: center;
+    }
+    .section-text {
+      flex: 1;
+    }
+    .mission-img {
+        flex: 1;
+      }
+      
+  }
+
+  #crkninja{
+    background-color: rgba(83, 31, 137, 1);
+    color: white;
+  }

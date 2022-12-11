@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { performApiRequest } from '../API';
 import { LoginInfo, LoginType } from '../App';
+import { NotFoundLabel } from '../NotFoundlabel';
 import './AcceptDoctors.scss';
 
 interface UnAcceptedDoctor{
@@ -31,9 +32,10 @@ export const AcceptDoctors = (props: {loginInfo:LoginInfo|null}) => {
         alert("Moras biti admin da bi pristupio ovoj strani")
         return <></>
     }
-    
     return <div id="unaccepteddoctors">
         {
+            list.length === 0?
+            <NotFoundLabel text='Trenutno nema zahteva za registraciju...'/>:
             list.map(doctor => 
             <div key={doctor.id}>
                 <span>{doctor.name} {doctor.lastname}</span>

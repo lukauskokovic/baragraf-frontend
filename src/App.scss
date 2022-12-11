@@ -1,8 +1,11 @@
 header > a{
     color: red;
 }
+*{
+    font-family: 'Montserrat', sans-serif;
+}
 $phoneWidth: 600px;
-$hamburgerWidth: 1300px;
+$hamburgerWidth: 1831231231250px;
 
 
 header{
@@ -18,7 +21,7 @@ header{
 }
 
 section{
-    height: 90vh;
+    min-height: 90vh;
     overflow: scroll;
     overflow-x: hidden;
     overflow-y: hidden;
@@ -28,6 +31,7 @@ header > a{
     color: white;
     text-decoration: none;
     font-size: 1.3rem;
+    font-weight: bold;
 }
 
 header > a:hover{
@@ -48,8 +52,11 @@ header svg{
     top: 1rem;
 }
 
+#logininfo svg{
+    top: initial!important;
+}
+
 header > svg{
-    
     top: 50%;
     transform: translateY(-50%);
     
@@ -87,17 +94,9 @@ header > svg{
     top: 0;
     position: absolute;
     transition: all 0.2s linear;
-    @media (max-width: 650px){
-        width: 70vw;
-    }
-    @media (min-width: 650px){
-        width: 50vw;
-    }
-    @media (min-width: 800px){
-        width: 30vw;
-    }
-    @media (min-width: 1000px){
-        width: 20vw;
+    width: 100vw;
+    @media (min-width: 900px){
+        width: 35vw;
     }
 }
 
@@ -116,8 +115,7 @@ header > svg{
 
 #logininfo{
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 1rem;
     left: 1rem;
     max-width: 100vw;
     display: flex;
@@ -191,4 +189,17 @@ header > svg{
    span{
     margin-right: 0.4rem;
    }
+}
+
+header > img{
+    position: absolute;
+    left: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    width: 8rem;
+    height: 8rem;
+}
+header > img:hover{
+    opacity: 0.8;
 }

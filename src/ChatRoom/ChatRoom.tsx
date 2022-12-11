@@ -1,6 +1,7 @@
 import React from 'react';
 import { SERVER_IP } from '../API';
 import { LoginInfo } from '../App';
+import { NotFoundLabel } from '../NotFoundlabel';
 import './ChatRoom.scss';
 
 interface Message{
@@ -76,6 +77,8 @@ export class ChatRoom extends React.Component<{loginInfo:LoginInfo|null, roomId:
     render(): React.ReactNode {
         return <div className='chatroom'>
             {
+                this.state.messages.length === 0?
+                <NotFoundLabel text='Jos uvek nema poruka u ovoj sobi.'/>:
                 this.state.messages.map((message, index) => 
                 <div key={index} className={this.username === message.sender? "my" : "foreign"}>
                     <div>

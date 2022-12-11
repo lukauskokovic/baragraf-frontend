@@ -1,3 +1,4 @@
+import {useNavigate} from 'react-router-dom';
 import { useRef, useState } from 'react';
 import { performApiRequest } from '../API';
 import { LoginInfo, LoginType } from '../App';
@@ -12,7 +13,7 @@ export const LoginPage = (props: {login:(info:LoginInfo)=>void}) => {
     const [prezime, setPrezime] = useState<string>("")
     const [password, setPassword] = useState<string>("")
     const [username, setUsername] = useState<string>("")
-
+    const navigate = useNavigate()
    
 
     const validateEmail = () => {
@@ -24,8 +25,8 @@ export const LoginPage = (props: {login:(info:LoginInfo)=>void}) => {
 
     return <div id="login">
         <div id="logintypes">
-            <button onClick={() => setLoginType("login")} className={loginType === 'login'? "selected" : undefined}>Login</button>
-            <button onClick={() => setLoginType("registeruser")} className={loginType !== 'login'? "selected" : undefined}>Register</button>
+            <button onClick={() => setLoginType("login")} className={loginType === 'login'? "selected" : undefined}>Uloguj se</button>
+            <button onClick={() => setLoginType("registeruser")} className={loginType !== 'login'? "selected" : undefined}>Registruj se</button>
         </div>
         <FancyInput text='Email' maxLength={30} onChange={() => {}} setter={setEmail}/>
         {
@@ -37,9 +38,9 @@ export const LoginPage = (props: {login:(info:LoginInfo)=>void}) => {
         }
         {
             loginType !== 'login' &&
-            <FancyInput text='Username' maxLength={30} onChange={() => {}} setter={setUsername}/>
+            <FancyInput text='Korisnicko ime' maxLength={30} onChange={() => {}} setter={setUsername}/>
         }
-        <FancyInput text='Password' maxLength={30} onChange={() => {}} type={"password"} setter={setPassword}/>
+        <FancyInput text='Sifra' maxLength={30} onChange={() => {}} type={"password"} setter={setPassword}/>
         {
             loginType !== 'login' &&
             <FancyInput text='Psiholog' maxLength={30} onChange={(e) => {
@@ -81,6 +82,7 @@ export const LoginPage = (props: {login:(info:LoginInfo)=>void}) => {
                 }
                 result.body.loginType = type
                 props.login(result.body)
+                navigate('/')
             }
             else if(loginType === 'registerdoc'){
                 if(ime.length < 3 || prezime.length < 3)
