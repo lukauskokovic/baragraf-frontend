@@ -1,0 +1,25 @@
+#unanwered{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items:  center;
+    row-gap: 1rem;
+    padding-top: 1rem;
+    overflow: scroll;
+    overflow-x: hidden;
+
+}
+
+#unanwered > div{
+    background-color: plum;
+    border-radius: 0.3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+    height: auto;
+    >button{
+        margin-top: 0.2rem;
+    }
+    padding-bottom: 0.4rem;
+}

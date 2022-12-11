@@ -1,0 +1,53 @@
+@import '../App.scss';
+.licnost{
+    background-color: purple;
+    border-radius: 0.5rem;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+   
+
+    @media (max-width: $phoneWidth) {
+        width: 95%;
+    }
+    @media (min-width: calc($phoneWidth)) {
+        width: 45%;
+    }
+    @media (min-width: calc($phoneWidth*2)){
+        width: 23%;
+    }
+    button{
+        position: absolute;
+        left: 50%;
+        bottom: 0.5rem;
+        transform: translateX(-50%);
+    }
+    img{
+        height: 40%;
+        background-color: blue;
+        width: 90%;
+    }
+    span:not(:first-of-type){
+        color:red;
+    }
+}
+
+#licnosti{
+    padding-top: 1rem;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    row-gap: 1.5rem;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.licnost-ime{
+    font-size: 2rem;
+    color: white;
+}

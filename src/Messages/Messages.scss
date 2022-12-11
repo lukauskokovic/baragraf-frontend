@@ -1,0 +1,36 @@
+#messages{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+#room-list{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 15vw;
+    background-color: purple;
+    height: 100%;
+    float: left;
+}
+
+#room-list > div{
+    cursor: pointer;
+    width: 100%;
+    position: relative;
+    float: left;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+#room{
+    width: 85vw;
+    position: absolute;
+    left: 15vw;
+    height: 100%;
+}

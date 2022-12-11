@@ -1,0 +1,49 @@
+.chatroom{
+    height: 100%;
+    width: 100%;
+
+    input{
+        width: 90%;
+        left: 50%;
+        transform: translateX(-50%);
+        outline: none;
+        border: none;
+        padding: 0.7rem;
+        background-color: rgb(220, 220, 220);
+        position: absolute;
+        bottom: 0.5rem;
+    }
+    padding-top: 1rem;
+}
+
+.chatroom div{
+    width: 100%;
+    color: white;
+}
+
+.chatroom div div{
+    padding: 0.3rem;
+    background-color: gray;
+    max-width: 60%;
+    width: fit-content;
+    border-radius: 0.3rem;
+
+    p:first-of-type{
+        font-size: 1.2rem;
+    }
+}
+
+
+.my{
+    >div{
+        margin-left: 0.5rem;
+    }
+}
+
+.chatroom .foreign{
+    >div{
+        position: absolute;
+        right: 0.5rem;
+        background-color: purple;
+    }
+}
