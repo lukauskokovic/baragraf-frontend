@@ -38,7 +38,10 @@ export class Messages extends React.Component<{loginInfo:LoginInfo|null}, {roomI
                 {
                     this.state.conversations.map(conv => 
                     <div key={conv.conversationId}
-                        onClick={() => this.setState({roomId: conv.conversationId})} 
+                        onClick={() => {
+                            console.log(conv.conversationId)
+                            this.setState({roomId: conv.conversationId})
+                        }} 
                         style={ this.state.roomId !== conv.conversationId ? undefined : {backgroundColor: "orange"}}>
                         <span>{conv.lastMessage.sender}: {conv.lastMessage.text.length > 20? conv.lastMessage.text.substring(0, 20) + "..." : conv.lastMessage.text.length}</span>
                     </div>)
@@ -48,7 +51,7 @@ export class Messages extends React.Component<{loginInfo:LoginInfo|null}, {roomI
                 {
                     this.state.roomId === undefined?
                     <></>:
-                    <ChatRoom roomId={this.state.roomId} loginInfo={this.props.loginInfo}/>
+                    <ChatRoom roomId={this.state.roomId} loginInfo={this.props.loginInfo} key={this.state.roomId}/>
                 }
             </div>
         </div>

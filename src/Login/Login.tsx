@@ -77,6 +77,7 @@ export const LoginPage = (props: {login:(info:LoginInfo)=>void}) => {
                     case "admin":type = LoginType.Admin;break;
                     case "victim":type = LoginType.User;break;
                     case "specialist":type = LoginType.Doctor;break;
+                    case "premium":type = LoginType.Pro;break;
                 }
                 result.body.loginType = type
                 props.login(result.body)

@@ -23,11 +23,12 @@
         left: 50%;
         bottom: 0.5rem;
         transform: translateX(-50%);
+        background-color: plum;
     }
     img{
         height: 40%;
-        background-color: blue;
-        width: 90%;
+        width: 85%;
+        border-radius: 0.5rem;
     }
     span:not(:first-of-type){
         color:red;
@@ -50,4 +51,10 @@
 .licnost-ime{
     font-size: 2rem;
     color: white;
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.6);
+}
+
+.licnost-prica{
+    color: white;
+    margin-top: 0.3rem;
 }

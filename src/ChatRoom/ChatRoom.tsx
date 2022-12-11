@@ -30,7 +30,6 @@ export class ChatRoom extends React.Component<{loginInfo:LoginInfo|null, roomId:
 
     connect(){
         if(this.unauth)return
-        console.log(this.props.loginInfo)
         this.webSocket = new WebSocket(`ws://${SERVER_IP}:8080`)
         this.webSocket.onclose = () => {
             if(this.closed)return
@@ -47,7 +46,6 @@ export class ChatRoom extends React.Component<{loginInfo:LoginInfo|null, roomId:
         this.webSocket.onmessage = (e : MessageEvent<string>) => {
             try{
                 let obj = JSON.parse(e.data)
-                console.log(obj)
                 if(obj.type === "unauthorized"){
                     this.webSocket?.close()
                     this.unauth = true
@@ -76,13 +74,12 @@ export class ChatRoom extends React.Component<{loginInfo:LoginInfo|null, roomId:
 
 
     render(): React.ReactNode {
-        console.log(this.username)
         return <div className='chatroom'>
             {
                 this.state.messages.map((message, index) => 
                 <div key={index} className={this.username === message.sender? "my" : "foreign"}>
                     <div>
-                        <p>{message.sender}</p>
+                        <p>{message.sender}: </p>
                         <p>{message.text}</p>
                     </div>
                 </div>)

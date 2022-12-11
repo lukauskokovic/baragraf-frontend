@@ -41,7 +41,7 @@ export const LicnostCard = (props: {licnost: Licnost, pro:boolean}) => {
         <p className='licnost-prica'>{props.licnost.story}</p>
         {
             props.pro &&
-            <button>Posalji poruku</button>
+            <button>Pitaj za savet</button>
         }
     </div>
 }
